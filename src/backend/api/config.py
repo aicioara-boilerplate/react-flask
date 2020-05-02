@@ -19,7 +19,13 @@ class Config:
         PARAMS="",
     )
     # Delete this to use postgres
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'database.sqlite3')
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(
+        basedir, # api
+        '..', # backend
+        '..', # src
+        '..', # root
+        'database.sqlite3',
+    )
 
     DEBUG = False
     # https://flask-sqlalchemy.palletsprojects.com/en/2.x/signals/
