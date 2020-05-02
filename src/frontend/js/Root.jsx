@@ -14,13 +14,13 @@ import 'favicon.ico';
 
 export default class Root extends React.Component {
     render() {
-        return <Router>
-            <div>
+        return (
+            <Router>
                 <Switch>
                     <Route exact path="/" component={App}/>
                     <Route component={PageNotFound}/>
                 </Switch>
-            </div>
-        </Router>
+            </Router>
+        )
     }
 }

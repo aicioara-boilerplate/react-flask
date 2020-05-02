@@ -6,9 +6,17 @@ class App extends React.Component {
     }
 
     render() {
-        return <div>
-            App
-        </div>;
+        return (
+            <div>
+                <div>
+                    App
+                </div>
+                <button className='btn btn-primary' onClick={() => this.props.listDinosaurs()}>List Dinosaurs</button>
+                <pre>
+                    {JSON.stringify(this.props.dinosaurs)}
+                </pre>
+            </div>
+        )
     }
 
     componentDidMount() {
@@ -17,15 +25,19 @@ class App extends React.Component {
 }
 
 App.defaultProps = {
-
+    dinosaurs: [],
+    listDinosaurs: () => {},
 }
 
 import {connect} from 'react-redux';
+import {listDinosaurs} from 'actions/templateAction.jsx'
 
 const mapStateToProps = state => ({
+    dinosaurs: state.template.dinosaurs,
 });
 
 const mapDispatchToProps = dispatch => ({
+    listDinosaurs: () => dispatch(listDinosaurs()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

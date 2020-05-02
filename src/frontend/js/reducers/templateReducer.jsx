@@ -2,6 +2,7 @@ import * as template from 'actions/templateAction.jsx';
 
 const initialState = {
     value: 0,
+    dinosaurs: [],
 };
 
 export default (state=initialState, action) => {
@@ -10,6 +11,12 @@ export default (state=initialState, action) => {
         return {
             ...state,
             value: action.payload,
+        }
+    }
+    case template.LIST_DINOSAURS_SUCCESS: {
+        return {
+            ...state,
+            dinosaurs: action.payload,
         }
     }
     default:
