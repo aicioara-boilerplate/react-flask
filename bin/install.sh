@@ -16,4 +16,5 @@ pip install -r requirements.txt
 
 # Database
 cd src/backend
+FLASK_ENV=development python manage.py db migrate
 FLASK_ENV=development python manage.py db upgrade
