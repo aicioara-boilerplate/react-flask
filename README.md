@@ -17,15 +17,13 @@ Starting code for a react app. Contains:
 ## Start
 
 ```bash
-npm install
-npm run watch
+./bin/install.sh
+./bin/frontend_start.sh
 ```
 
 ```bash
-python3 -m venv venv
-source venv/bin/activate
-
-pip install -r requirements.txt
+./bin/install.sh
+./bin/backend_start.sh
 ```
 
 ## Build
